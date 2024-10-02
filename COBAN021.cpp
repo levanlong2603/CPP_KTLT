@@ -21,13 +21,14 @@ void in2(){
     int i = 0;
     while((n[i] - '0') <= b && i < n.size()) i++;
     while((n[i] - '0') + 1 > b && i > 0) i--;
+    n[i] = (b + '0');
     if(i == 0){
         cout << b; cnt2--;
         while(cnt1--) cout << a;
         while(cnt2--) cout << b;
     }
     else{
-        for(int j = 0; j < i; j++){
+        for(int j = 0; j <= i; j++){
             int c = (n[j] - '0');
             if(a >= c && cnt1 > 0){
                 v.push_back(a);
@@ -42,10 +43,6 @@ void in2(){
                 cnt2--;
                 break;
             }
-        }
-        if(cnt2 > 0){
-            v.push_back(b);
-            cnt2--;
         }
         while(cnt1--) v.push_back(a);
         while(cnt2--) v.push_back(b);
